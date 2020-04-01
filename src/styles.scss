@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+.wrapper{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.main-nav{
+  margin-left: -10px;
+  margin-right: -10px;
+  font-size: 1.25rem;
+  ul{
+    li{
+      text-align: left;
+      padding:10px;
+    }
+    a{
+      text-decoration: none;
+      overflow: hidden;
+      display: block;
+      color: black;
+      transition:transform .25s linear;
+      text-align: center;
+      span{
+        display: inline-block;
+        vertical-align: top;
+        transition:transform 0.3s;
+        text-align: center;
+        &:before{
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          content: attr(data-hover);
+          color: blue;
+          transform: translate3d(-50%,0,0);
+        }
+      }
+      &.active{
+        transform-origin:50% 50%;
+        text-decoration: underline;
+        pointer-events: none;
+        span{
+          transform:translateY(-100%);
+        }
+      }
+    }
+    + ul{
+      li{
+        text-align: right;
+      }
+      a span:before{color:green;}
+    }
+  }
+}
+
+.form-control{
+  height:45px;
+}
+
+.card{
+  box-shadow: 0 2px 2px 0 rgba(rgb(0, 13, 128), 0.3);
+}
+
+.btn:disabled,
+.btn.disabled{
+  pointer-events: none;
+}
+
+.form-group{
+  position: relative;
+}
+
+.error-msg{
+  position: absolute;
+  top:100%;
+  left: 0;
+}

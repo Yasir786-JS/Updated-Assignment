@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h2>Course Detail:</h2>
+  <hr>
+  <div class="row">
+    <div class="col-12 col-md-6 mx-auto" *ngIf="course">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ course.name }}</h5>
+          <h6>Duration: {{ course.duration }}</h6>
+          <p class="card-text">Fee: {{ course.fee }}</p>
+          <p>startDate: {{ course.startDate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>Students</h2>
+  <hr>
+  <ol class="row">
+    <li class="col col-md-6 px-4" *ngFor="let student of students">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ student.name }}</h5>
+          <h6>Age: {{ student.age }}</h6>
+          <p class="card-text">Class: {{ student.class }}</p>
+          <p>Section: {{ student.section }}</p>
+          <p>Address: {{ student.address }}</p>
+          <button routerLink="/student-details/{{student.id}}" class="w-100 btn btn-outline-primary mb-2 d-block">View
+            Student</button>
+          <button [routerLink]="['/edit-student', student.id]" class="w-100 btn btn-outline-primary mb-2 d-block">Edit
+            Student</button>
+          <button (click)="deleteStudent(student)" class="w-100 btn btn-outline-primary d-block">Delete Student</button>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>

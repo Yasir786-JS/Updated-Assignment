@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>Courses</h2>
+  <hr>
+  <ol class="row">
+    <li *ngFor="let course of courses" class="col-12 col-md-6 px-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ course.name }}</h5>
+          <h6>Duration: {{ course.duration }}</h6>
+          <p class="card-text">Fee: {{ course.fee }}</p>
+          <p>startDate: {{ course.startDate }}</p>
+          <button routerLink="/view-course/{{course.id}}" class="w-100 btn btn-outline-success mb-2 d-block">View
+            Course</button>
+          <button routerLink="/edit-course/{{course.id}}" class="w-100 btn btn-outline-success mb-2 d-block">Edit
+            Course</button>
+          <button (click)="deleteCourse(course)" class="w-100 btn btn-outline-success d-block">Delete
+            Course</button>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>

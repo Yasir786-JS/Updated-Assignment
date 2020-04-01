@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <h2>Add New Student</h2>
+  <hr>
+  <form [formGroup]="newStudent" (ngSubmit)="addStudent()">
+    <div class="form-row">
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" formControlName="name" required>
+          <span class="error-msg text-danger" *ngIf="!newStudent.get('name').valid && newStudent.get('name').pristine">Name is required</span>
+        </div>
+      </div>
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" class="form-control" id="age" formControlName="age" required>
+          <span class="error-msg text-danger" *ngIf="!newStudent.get('age').valid && newStudent.get('age').pristine">Name is required</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="class">Class:</label>
+          <input type="text" class="form-control" id="class" formControlName="class" required>
+          <span class="error-msg text-danger" *ngIf="!newStudent.get('class').valid && newStudent.get('class').pristine">Name is required</span>
+        </div>
+      </div>
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="section">Section:</label>
+          <input type="text" class="form-control" id="section" formControlName="section" required>
+          <span class="error-msg text-danger" *ngIf="!newStudent.get('section').valid && newStudent.get('section').pristine">Name is required</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="courseID">CourseID:</label>
+          <select class="form-control" formControlName="courseId">
+            <option *ngFor="let course of courses" [value]=course.id>{{course.id}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" class="form-control" id="address" formControlName="address">
+        </div>
+      </div>
+    </div>
+    <button [disabled]="!newStudent.valid" type="submit" class="w-50 btn btn-primary">Add Student</button>
+  </form>
+</div>

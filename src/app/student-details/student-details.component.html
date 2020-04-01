@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>Student Details:</h2>
+  <hr>
+  <div class="row">
+    <div class="col col-md-6 mx-auto" *ngIf="student && courseName">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ student.name }}</h5>
+          <h5>Id: {{ student.id }}</h5>
+          <h6>Age: {{ student.age }}</h6>
+          <p class="card-text">Class: {{ student.class }}</p>
+          <p>CourseName: {{ courseName.name }}</p>
+          <p>Section: {{ student.section }}</p>
+          <p>Address: {{ student.address }}</p>
+          <div class="d-flex">
+            <button routerLink="/edit-student/{{student.id}}" class="btn btn-primary mr-2">Edit Student</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <h2>{{ courseId ? 'Edit Course' : 'Add New Course'}} : {{ courseForm.value.name }}</h2>
+  <hr>
+  <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="courseName">Course Name:</label>
+          <input type="text" class="form-control" id="courseName" formControlName="name" required>
+          <span class="error-msg text-danger" *ngIf="!courseForm.get('name').valid && courseForm.get('name').pristine">Course Name is required</span>
+        </div>
+      </div>
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="duration">Duration:</label>
+          <input type="text" class="form-control" id="duration" formControlName="duration" required>
+          <span class="error-msg text-danger" *ngIf="!courseForm.get('duration').valid && courseForm.get('duration').pristine">Duration required</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="fee">Fee:</label>
+          <input type="text" class="form-control" id="fee" formControlName="fee" required>
+          <span class="error-msg text-danger" *ngIf="!courseForm.get('fee').valid && courseForm.get('fee').pristine">Fee value required</span>
+        </div>
+      </div>
+      <div class="col w-50 px-2 pb-4">
+        <div class="form-group">
+          <label for="startDate">Start Date:</label>
+          <input type="date" class="form-control" id="startDate" formControlName="startDate" required>
+          <span class="error-msg text-danger" *ngIf="!courseForm.get('startDate').valid && courseForm.get('startDate').pristine">Start Date required</span>
+        </div>
+      </div>
+    </div>
+    <button [disabled]="!courseForm.valid" type="submit" class="w-50 btn btn-success">{{ courseId ? 'Save Course' : 'Add Course'}}</button>
+  </form>
+</div>

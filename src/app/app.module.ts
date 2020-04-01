@@ -1,18 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { CoursesComponent } from './courses/courses.component';
+import { StudentComponent } from './student/student.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { ViewCourseComponent } from './view-course/view-course.component';
+import { CourseFormComponent } from './course-form/course-form.component';
+import { StudentFormComponent } from './student-form/student-form.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AddStudentComponent,
+        CoursesComponent,
+        StudentComponent,
+        StudentDetailsComponent,
+        ViewCourseComponent,
+        CourseFormComponent,
+        StudentFormComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' })
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
