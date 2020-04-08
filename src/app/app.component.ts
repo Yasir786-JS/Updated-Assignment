@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'SIS-App';
+    p = 1;
+    Collection = [];
+    students = [
+        {
+            name: 'name',
+            id: '1'
+        },
+        {
+            name: 'name2',
+            id: '2'
+        }
+    ];
+    constructor() {
+        for (let i = 0; i <= 100; i++) {
+            const obj = { name: `EmployeeName ${i}`, code: `Emp ${i}` };
+            this.Collection.push(obj);
+        }
+    }
 }

@@ -8,6 +8,7 @@ import { Course } from '../course';
     styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
+    p = 1;
     courses: Course[];
     selectedCourse: Course[];
     constructor(private service: CourseService) {}

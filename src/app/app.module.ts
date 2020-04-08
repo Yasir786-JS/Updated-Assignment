@@ -1,3 +1,4 @@
+import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +12,9 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import { StudentFormComponent } from './student-form/student-form.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
     declarations: [
@@ -23,14 +27,17 @@ import { StudentFormComponent } from './student-form/student-form.component';
         CourseFormComponent,
         StudentFormComponent
     ],
+    exports: [CourseFormComponent],
     imports: [
+        NgbModule,
         BrowserModule,
+        NgxPaginationModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' })
     ],
-    providers: [],
+    providers: [AppComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

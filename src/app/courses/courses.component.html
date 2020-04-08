@@ -1,8 +1,8 @@
 <div class="container mt-5">
   <h2>Courses</h2>
   <hr>
-  <ol class="row">
-    <li *ngFor="let course of courses" class="col-12 col-md-6 px-4">
+  <ul class="app-pagination row list-unstyled">
+    <li *ngFor="let course of courses | paginate: {itemsPerPage: 2, currentPage: p }" class="col-12 col-md-6 px-4">
       <div class="card mb-4">
         <div class="card-body">
           <h5 class="card-title">Name: {{ course.name }}</h5>
@@ -18,5 +18,7 @@
         </div>
       </div>
     </li>
-  </ol>
+  </ul>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+
